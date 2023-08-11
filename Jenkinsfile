@@ -4,12 +4,6 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
-        
-    stage('Git') {
-      steps {
-        git 'https://github.com/ShaileshDhokare/node-testing-example.git'
-      }
-    }
      
     stage('Build') {
       steps {
