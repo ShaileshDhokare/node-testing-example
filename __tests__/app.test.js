@@ -13,7 +13,7 @@ describe('Api testing', () => {
             done();
         })
     })
-    it('Create a user', (done) => {
+    it('Create a new user', (done) => {
         const expectedResponse = [
             user
         ]
@@ -31,7 +31,7 @@ describe('Api testing', () => {
             ...user
         }
         request(app)
-        .get('/user/1')
+        .get('/user/2')
         .expect(200)
         .end((err, res) => {
             expect(res.body).toEqual(expectedResponse)
