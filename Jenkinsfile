@@ -26,11 +26,12 @@ pipeline {
 
     stage('SonarQube Analysis') {
       steps {
-        script {
-          def scannerHome = tool 'SonarQubeScanner';
-          withSonarQubeEnv('sonarqube') {
-            sh "${scannerHome}/bin/sonar-scanner"
-          }
+        withSonarQubeEnv('sonarqube') {
+          sh 'sonar-scanner \
+            -Dsonar.projectKey=jenkins-assignment-key \
+            -Dsonar.sources=. \
+            -Dsonar.login=sqp_5feede43f58bd87f4682f56fa139bf541aa46403 \
+            -Dsonar.host.url=http://127.0.0.1:9000'
         }
       }
     }
