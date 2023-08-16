@@ -31,7 +31,7 @@ describe('Api testing', () => {
             ...user
         }
         request(app)
-        .get('/user/2')
+        .get('/user/1')
         .expect(200)
         .end((err, res) => {
             expect(res.body).toEqual(expectedResponse)
