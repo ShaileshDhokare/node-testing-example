@@ -57,9 +57,16 @@ pipeline {
       steps{
          script {
             sh 'docker run -p 4000:4000 -d sdhokare/node-jenkins-example:${BUILD_NUMBER}'
+          }
+        }
+    }
+
+    stage('Test application') {
+      steps{
+         script {
             sh 'curl -i http://localhost:4000'
           }
         }
-      }
+    }
   }
 }
