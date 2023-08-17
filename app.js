@@ -7,6 +7,10 @@ app.use(bodyParser.json());
 let users = [];
 
 app.get('/', (req, res) => {
+    res.status(200).json({message: 'App is running'})
+})
+
+app.get('user/', (req, res) => {
     // users.push({
     //     id: 1,
     //     name: 'Test User',
