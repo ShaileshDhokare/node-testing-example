@@ -56,8 +56,7 @@ pipeline {
     stage('Run application') {
       steps{
          script {
-            sh 'docker rm node-jenkins-example'
-            sh 'docker run --name node-jenkins-example -p 4000:4000 -d sdhokare/node-jenkins-example'
+            sh 'docker run --name node-jenkins-example:${BUILD_NUMBER} -p 4000:4000 -d sdhokare/node-jenkins-example'
             sh 'curl -i http://localhost:4000'
           }
         }
