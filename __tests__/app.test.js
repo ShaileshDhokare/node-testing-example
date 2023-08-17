@@ -6,7 +6,7 @@ describe('Api testing', () => {
     it('Get all users', (done) => {
         const expectedResponse = []
         request(app)
-        .get('user/')
+        .get('/user')
         .expect(200)
         .end((err, res) => {
             expect(res.body).toEqual(expectedResponse)
