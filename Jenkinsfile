@@ -20,6 +20,7 @@ pipeline {
             
     stage('Test') {
       steps {
+        sh 'docker kill node-jenkins-example'
         sh 'npm run test'
       }
     }
