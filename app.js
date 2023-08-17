@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 let users = [];
 
 app.get('/', (req, res) => {
-    users.push({
-        id: 1,
-        name: 'Test User',
-        email: 'test@test.com'
-    });
+    // users.push({
+    //     id: 1,
+    //     name: 'Test User',
+    //     email: 'test@test.com'
+    // });
     res.status(200).json(users)
 })
 
